@@ -3,23 +3,22 @@ import { useParams } from "react-router-dom";
 import { useEstadosGlobalesContext } from "../Components/utils/DentistContext";
 
 const Detail = () => {
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
-  const { odontologos, theme } = useEstadosGlobalesContext();
+  const { dentists, theme } = useEstadosGlobalesContext();
   const { id } = useParams();
 
-  const [odontologo, setOdontologo] = useState(undefined);
+  const [dentist, setDentist] = useState(undefined);
 
   useEffect(() => {
-    const o = odontologos.find((odontologo) => {
-      return odontologo.id == id;
+    const o = dentists.find((dentist) => {
+      return dentist.id == id;
     });
-    setOdontologo(o);
-  }, [odontologos]);
+    setDentist(o);
+  }, [dentists]);
 
   return (
     <div className={theme.color}>
       <h1>Detail Dentist id </h1>
-      {odontologo && (
+      {dentist && (
         <table>
           <thead>
             <tr>
@@ -31,15 +30,15 @@ const Detail = () => {
           </thead>
           <tbody>
             <tr>
-              <td>{odontologo.name}</td>
-              <td>{odontologo.email}</td>
-              <td>{odontologo.phone}</td>
-              <td>{odontologo.website}</td>
+              <td>{dentist.name}</td>
+              <td>{dentist.email}</td>
+              <td>{dentist.phone}</td>
+              <td>{dentist.website}</td>
             </tr>
           </tbody>
         </table>
       )}
-      {!odontologo && <h1>Dentist Not Found</h1>}
+      {!dentist && <h1>Dentist Not Found</h1>}
     </div>
   );
 };

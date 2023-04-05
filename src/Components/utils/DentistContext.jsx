@@ -16,11 +16,11 @@ const themeReducer = (state, action) => {
   }
 };
 const EstadosGlobalesProvider = ({ children }) => {
-  const [odontologos, setOdontologos] = useState(initialOdontologosState);
+  const [dentists, setOdontologos] = useState(initialOdontologosState);
   const [theme, dispatchTheme] = useReducer(themeReducer, initialThemeState);
 
   const value = {
-    odontologos,
+    dentists,
     setOdontologos,
     theme,
     dispatchTheme,

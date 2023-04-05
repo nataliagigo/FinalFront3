@@ -4,7 +4,7 @@ import Card from "../Components/Card";
 import { useEstadosGlobalesContext } from "../Components/utils/DentistContext";
 
 const Home = () => {
-  const { theme, odontologos, setOdontologos } = useEstadosGlobalesContext();
+  const { theme, dentists, setOdontologos } = useEstadosGlobalesContext();
 
   useEffect(() => {
     axios("https://jsonplaceholder.typicode.com/users").then((res) => {
@@ -16,12 +16,12 @@ const Home = () => {
     <main className={theme.color}>
       <h1>Home</h1>
       <div className="card-grid">
-        {odontologos.map((odontologo) => (
+        {dentists.map((dentist) => (
           <Card
-            key={odontologo.id}
-            name={odontologo.name}
-            username={odontologo.username}
-            id={odontologo.id}
+            key={dentist.id}
+            name={dentist.name}
+            username={dentist.username}
+            id={dentist.id}
           />
         ))}
       </div>

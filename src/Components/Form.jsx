@@ -24,11 +24,11 @@ const Form = () => {
 
     if (!newUser.nombre || newUser.nombre.length < 5) {
       error.nombreError =
-        "El nombre es requerido y debe tener al menos 5 caracteres";
+        "Name required & This field must contain a minimum of 5 characters";
     }
 
     if (!newUser.email || !emailRegex.test(newUser.email)) {
-      error.emailError = "El email debe ser válido";
+      error.emailError = "Invalid email";
     }
 
     if (error.nombreError || error.emailError) {
@@ -42,13 +42,12 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // El valor que le pasa lo deberias sacar del evento
     const isValid = validate(newUser);
 
     if (!isValid) {
       return;
     }
-    alert(`Gracias ${newUser.nombre}, te contactaremos cuando antes vía mail`);
+    alert(`Thank you ${newUser.nombre}, we will send an email`);
   };
 
   return (
@@ -58,17 +57,19 @@ const Form = () => {
           className={errors.nombreError ? "inputError" : ""}
           name="nombre"
           type="text"
+          placeholder="Name"
           onChange={handleInputChange}
         />
-        {errors.nombreError && <label> ⚠ {errors.nombreError}</label>}
+        {errors.nombreError && <label> {errors.nombreError}</label>}
         <input
           className={errors.emailError ? "inputError" : ""}
           name="email"
           type="email"
+          placeholder="Email"
           onChange={handleInputChange}
         />
-        {errors.emailError && <label> ⚠ {errors.emailError}</label>}
-        <button onClick={handleSubmit}>Enviar</button>
+        {errors.emailError && <label> {errors.emailError}</label>}
+        <button onClick={handleSubmit}>Send</button>
       </form>
     </div>
   );

@@ -1,18 +1,18 @@
 export const Paths = {
-  home: {
-    name: "Home",
-    path: "/",
-  },
   dentist: {
     name: "Dentist",
     path: "/detail",
   },
-  contact: {
-    name: "Contact",
-    path: "/contact",
+  home: {
+    name: "Home",
+    path: "/",
   },
   favs: {
     name: "Favorites",
     path: "/favs",
   },
+  contact: {
+    name: "Contact",
+    path: "/contact",
+  }
 };

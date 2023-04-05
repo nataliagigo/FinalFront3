@@ -35,10 +35,10 @@ const Card = ({ name, username, id }) => {
         <p>{username}</p>
       </Link>
       <button onClick={handleFavs} className="favButton">
-        <span className={`material-symbols-outlined ${isFav ? "fav" : ""}`}>
-          favorite
+        <span class={`material-symbols-outlined ${isFav ? "fav" : ""}`}>
+          star
         </span>
-        {`${!isFav ? "Add to fav" : "Remove from fav"}`}
+        {`${!isFav ? "Add" : "Remove"}`}
       </button>
     </div>
   );
