@@ -6,14 +6,14 @@ const Detail = () => {
   const { dentists, theme } = useEstadosGlobalesContext();
   const { id } = useParams();
 
-  const [dentist, setDentist] = useState(undefined);
+  const [ dentist, setDentist ] = useState(undefined);
 
   useEffect(() => {
     const o = dentists.find((dentist) => {
       return dentist.id == id;
     });
     setDentist(o);
-  }, [dentists]);
+  }, [ dentists ]);
 
   return (
     <div className={theme.color}>

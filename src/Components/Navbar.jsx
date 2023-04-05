@@ -2,7 +2,7 @@ import React from "react";
 import { useEstadosGlobalesContext } from "./utils/DentistContext";
 import { Link } from "react-router-dom";
 import { Paths } from "./utils/Paths";
-import DarkModeButton from "./DarkModeButton/DarkModeButton";
+import DarkModeButton from "./ModeButton/ModeButton";
 
 const Navbar = () => {
   const { theme, dispatchTheme } = useEstadosGlobalesContext();
@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav className={theme.color}>
-      
+
       <Link to={home.path}>{home.name}</Link>
       <Link to={contact.path}>{contact.name}</Link>
       <Link to={favs.path}>{favs.name}</Link>

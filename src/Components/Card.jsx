@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Paths } from "./utils/Paths";
 
 const Card = ({ name, username, id }) => {
-  const [isFav, setIsFav] = useState(false);
+  const [ isFav, setIsFav ] = useState(false);
 
   useEffect(() => {
     const favs = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -23,7 +23,7 @@ const Card = ({ name, username, id }) => {
 
     localStorage.setItem(
       "favorites",
-      JSON.stringify([...favs, { name, username, id }])
+      JSON.stringify([ ...favs, { name, username, id } ])
     );
   };
 
