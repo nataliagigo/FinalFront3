@@ -1,6 +1,8 @@
 import React from "react";
 import styles from '../Components/Styles/Footer.module.css'
 import { useEstadosGlobalesContext } from "./utils/DentistContext";
+import facebook from '../../public/images/ico-facebook.png'
+
 
 const Footer = () => {
   const { theme } = useEstadosGlobalesContext();
@@ -18,6 +20,7 @@ const Footer = () => {
         <nav>
           <a href=""></a>
         </nav>
+
 
       </section>
     </>
