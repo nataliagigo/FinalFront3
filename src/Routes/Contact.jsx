@@ -1,6 +1,6 @@
 import React from "react";
 import Form from "../Components/Form";
-import { useEstadosGlobalesContext } from "../Components/utils/global.context";
+import { useEstadosGlobalesContext } from "../Components/utils/DentistContext";
 
 const Contact = () => {
   const { theme } = useEstadosGlobalesContext();

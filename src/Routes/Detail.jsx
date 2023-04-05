@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useEstadosGlobalesContext } from "../Components/utils/global.context";
+import { useEstadosGlobalesContext } from "../Components/utils/DentistContext";
 
 const Detail = () => {
   // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico

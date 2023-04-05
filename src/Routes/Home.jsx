@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import Card from "../Components/Card";
-import { useEstadosGlobalesContext } from "../Components/utils/global.context";
+import { useEstadosGlobalesContext } from "../Components/utils/DentistContext";
 
 const Home = () => {
   const { theme, odontologos, setOdontologos } = useEstadosGlobalesContext();

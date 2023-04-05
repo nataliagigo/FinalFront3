@@ -6,20 +6,20 @@ import Detail from "./Routes/Detail";
 import Favs from "./Routes/Favs";
 import Home from "./Routes/Home";
 import Contact from "./Routes/Contact";
-import { links } from "./Components/utils/links";
-import NotFound from "./Pages/404/NotFound";
+import { Paths } from "./Components/utils/Paths";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
-  const { home, contacto, favs, dentista } = links;
+  const { home, contact, favs, dentist } = Paths;
 
   return (
     <div className="App">
       <Navbar />
       <Routes>
         <Route path={home.path} element={<Home />} />
-        <Route path={`${dentista.path}/:id`} element={<Detail />} />
+        <Route path={`${dentist.path}/:id`} element={<Detail />} />
         <Route path={favs.path} element={<Favs />} />
-        <Route path={contacto.path} element={<Contact />} />
+        <Route path={contact.path} element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

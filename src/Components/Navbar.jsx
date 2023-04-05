@@ -1,12 +1,12 @@
 import React from "react";
-import { useEstadosGlobalesContext } from "./utils/global.context";
+import { useEstadosGlobalesContext } from "./utils/DentistContext";
 import { Link } from "react-router-dom";
-import { links } from "./utils/links";
+import { Paths } from "./utils/Paths";
 import DarkModeButton from "./DarkModeButton/DarkModeButton";
 
 const Navbar = () => {
   const { theme, dispatchTheme } = useEstadosGlobalesContext();
-  const { home, contacto, favs, dentista } = links;
+  const { home, contact, favs } = Paths;
 
   const handleTheme = () => {
     dispatchTheme({ type: theme.color === "light" ? "SET_DARK" : "SET_LIGHT" });
@@ -14,11 +14,10 @@ const Navbar = () => {
 
   return (
     <nav className={theme.color}>
+      
       <Link to={home.path}>{home.name}</Link>
-      <Link to={contacto.path}>{contacto.name}</Link>
+      <Link to={contact.path}>{contact.name}</Link>
       <Link to={favs.path}>{favs.name}</Link>
-      {/* <Link to={dentista.path}>{dentista.name}</Link> */}
-      {/* <button onClick={handleTheme}>Change theme</button> */}
       <DarkModeButton onClick={handleTheme} />
     </nav>
   );

@@ -11,8 +11,8 @@ const DarkModeButton = ({ onClick }) => {
         onClick={onClick}
       />
       <label htmlFor="checkbox" className="label">
-        <span className="moon">🌙</span>
-        <span className="sun">☀</span>
+        <span className="moon">Light</span>
+        <span className="sun">Dark</span>
         <div className="ball" />
       </label>
     </div>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { links } from "./utils/links";
+import { Paths } from "./utils/Paths";
 
 const Card = ({ name, username, id }) => {
   const [isFav, setIsFav] = useState(false);
@@ -14,7 +14,6 @@ const Card = ({ name, username, id }) => {
   const handleFavs = () => {
     const favs = JSON.parse(localStorage.getItem("favorites")) || [];
     const newFavs = favs.filter((fav) => fav.id !== id);
-    //debugger;
     setIsFav(!isFav);
 
     if (isFav) {
@@ -30,7 +29,7 @@ const Card = ({ name, username, id }) => {
 
   return (
     <div className="card">
-      <Link to={`${links.dentista.path}/${id}`}>
+      <Link to={`${Paths.dentist.path}/${id}`}>
         <img src="./images/doctora.jpg" alt={username} />
         <h4>{name}</h4>
         <p>{username}</p>

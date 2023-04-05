@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Card from "../Components/Card";
-import { useEstadosGlobalesContext } from "../Components/utils/global.context";
+import { useEstadosGlobalesContext } from "../Components/utils/DentistContext";
 
 const Favs = () => {
   const { theme } = useEstadosGlobalesContext();
@@ -20,7 +20,7 @@ const Favs = () => {
             />
           ))
         ) : (
-          <p>No hay favoritos</p>
+          <p>There're not favorites</p>
         )}
       </div>
     </div>

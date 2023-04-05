@@ -1,5 +1,5 @@
 import React from "react";
-import { useEstadosGlobalesContext } from "./utils/global.context";
+import { useEstadosGlobalesContext } from "./utils/DentistContext";
 
 const Footer = () => {
   const { theme } = useEstadosGlobalesContext();
