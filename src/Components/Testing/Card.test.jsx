@@ -1,6 +1,10 @@
-import { expect, test } from "vitest"
-import Card from "../Card"
-import { render, screen } from "@testing-library/react"
+import { test } from "vitest"
+import { expect } from "vitest"
+import { Card } from '../Card'
+import { render, screen } from '@testing-library/react'
+import React from "react"
+import '@testing-library/jest-dom'
+
 
 test("card", () => {
     render(<Card />)
