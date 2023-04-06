@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Paths } from "./utils/Paths";
-import styles from './Styles/Card.module.css';
+
 
 const Card = ({ name, username, id }) => {
   const [ isFav, setIsFav ] = useState(false);
