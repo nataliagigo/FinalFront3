@@ -9,7 +9,7 @@ const Navbar = () => {
   const { home, contact, favs } = Paths;
 
   const handleTheme = () => {
-    dispatchTheme({ type: theme.color === "light" ? "SET_DARK" : "SET_LIGHT" });
+    dispatchTheme({ type: theme.color === 'light' ? 'SET_DARK' : 'SET_LIGHT' });
   };
 
   return (

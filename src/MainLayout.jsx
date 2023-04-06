@@ -1,19 +1,19 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 import "./App.css";
-import Footer from "./Components/Footer";
-import Navbar from "./Components/Navbar";
-import Detail from "./Routes/Detail";
-import Favs from "./Routes/Favs";
-import Home from "./Routes/Home";
-import Contact from "./Routes/Contact";
-import { Paths } from "./Components/utils/Paths";
-import NotFound from "./Pages/NotFound/NotFound";
+import Footer from './Components/Footer';
+import Navbar from './Components/Navbar';
+import Detail from './Routes/Detail';
+import Favs from './Routes/Favs';
+import Home from './Routes/Home';
+import Contact from './Routes/Contact';
+import { Paths } from './Components/utils/Paths';
+import NotFound from './Routes/NotFound';
 
 function MainLayout() {
   const { home, contact, favs, dentist } = Paths;
 
   return (
-    <div className="MainLayout">
+    <div className='MainLayout'>
       <Navbar />
       <Routes>
         <Route path={home.path} element={<Home />} />
