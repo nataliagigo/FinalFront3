@@ -1,18 +1,18 @@
 import { useState } from "react";
+import styles from './Styles/Form.module.css'
 
 const Form = () => {
-  //Aqui deberan implementar el form completo con sus validaciones
-  const [newUser, setNewUser] = useState({
+  const [ newUser, setNewUser ] = useState({
     nombre: "",
     email: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [ errors, setErrors ] = useState({});
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (event) => {
     setNewUser({
       ...newUser,
-      [e.target.name]: e.target.value,
+      [ event.target.name ]: event.target.value,
     });
   };
 
@@ -20,15 +20,15 @@ const Form = () => {
     const emailRegex =
       /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
 
-    const error = { nombreError: "", emailError: "" };
+    const error = { nombreError: '', emailError: '' };
 
     if (!newUser.nombre || newUser.nombre.length < 5) {
       error.nombreError =
-        "Name required & This field must contain a minimum of 5 characters";
+        ' Minimum of 5 characters';
     }
 
     if (!newUser.email || !emailRegex.test(newUser.email)) {
-      error.emailError = "Invalid email";
+      error.emailError = 'Invalid email';
     }
 
     if (error.nombreError || error.emailError) {
@@ -40,8 +40,8 @@ const Form = () => {
     return true;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     const isValid = validate(newUser);
 
     if (!isValid) {
@@ -52,20 +52,20 @@ const Form = () => {
 
   return (
     <div>
-      <form>
+      <form className={styles.form}>
         <input
-          className={errors.nombreError ? "inputError" : ""}
-          name="nombre"
-          type="text"
-          placeholder="Name"
+          className={errors.nombreError ? 'inputError' : ""}
+          name='nombre'
+          type='text'
+          placeholder='Name'
           onChange={handleInputChange}
         />
         {errors.nombreError && <label> {errors.nombreError}</label>}
         <input
-          className={errors.emailError ? "inputError" : ""}
-          name="email"
-          type="email"
-          placeholder="Email"
+          className={errors.emailError ? 'inputError' : ''}
+          name='email'
+          type='email'
+          placeholder='Email'
           onChange={handleInputChange}
         />
         {errors.emailError && <label> {errors.emailError}</label>}

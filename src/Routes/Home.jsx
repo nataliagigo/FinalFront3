@@ -7,7 +7,7 @@ const Home = () => {
   const { theme, dentists, setOdontologos } = useEstadosGlobalesContext();
 
   useEffect(() => {
-    axios("https://jsonplaceholder.typicode.com/users").then((res) => {
+    axios('https://jsonplaceholder.typicode.com/users').then((res) => {
       setOdontologos(res.data);
     });
   }, []);
